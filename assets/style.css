@@ -1,0 +1,43 @@
+body {
+    background-image: url(../assets/images/theatre-curtain.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+#quiz-area {
+    margin: 0 auto;
+    width: 75%;
+    text-align: center;
+    border: 2px solid white;
+    background-image: url(../assets/images/blue-gradient.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#question {
+    padding: 1rem;
+    margin: 30px auto;
+}
+
+button {
+    margin: 2rem;
+}
+
+h1 {
+    text-align: center;
+    padding: 5%;
+}
+
+.answer-box {
+    border: 1px solid white;
+    padding: 1rem;
+    width: 80%;
+    margin: 15px auto;
+}
+
+.marker {
+    margin: 0;
+    text-align: left;
+    color: red;
+}
