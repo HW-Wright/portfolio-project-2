@@ -3,13 +3,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    font-family: "Limelight";
+    font-weight: 200;
 }
 
 #quiz-area {
     margin: 0 auto;
     width: 75%;
     text-align: center;
-    border: 2px solid white;
+    border: 2px solid rgb(176, 16, 16);
+    border-radius: 50px;
     background-image: url(../assets/images/blue-gradient.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,18 +29,35 @@ button {
 
 h1 {
     text-align: center;
-    padding: 5%;
+    padding: 2rem;
+    letter-spacing: 0.2rem;
+    color: antiquewhite;  
+}
+
+h3 {
+    text-align: center;
+    letter-spacing: 0.5rem;
+    color: antiquewhite;
+    font-weight: 100;
 }
 
 .answer-box {
-    border: 1px solid white;
-    padding: 1rem;
+    border: 1px solid antiquewhite;
+    border-radius: 20px;
+    padding: 0.8rem;
     width: 80%;
-    margin: 15px auto;
+    margin: 10px auto;
 }
 
 .marker {
-    margin: 0;
-    text-align: left;
-    color: red;
+    color: rgb(176, 16, 16);
+}
+
+#submit {
+    background-color: rgba(176, 16, 16, 0.81);
+    width: 15%;
+    height: 50px;
+    border: 1px transparent;
+    border-radius: 25px;
+    color: antiquewhite;
 }
