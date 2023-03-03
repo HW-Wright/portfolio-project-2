@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-
+    let options = document.getElementsByClassName("answer-box");
 })
 
 const questions = [
