@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", populateQuestion())
+populateQuestion();
 
 const quizQuestions = [
     {
@@ -82,20 +82,89 @@ const option1 = document.getElementById("a").value;
 const option2 = document.getElementById("b").value;
 const option3 = document.getElementById("c").value;
 
+/**
+ * To populate the question and answer
+ * areas with the corresponding html
+ */
 function populateQuestion () {
 
-    let currentQuestion = 0;
+    let currentQuestion = Math.floor(Math.random() * 14);
     
-    if (currentQuestion = 0){
+    if (currentQuestion === 0){
         quiz.innerHTML = quizQuestions[0].question;
         option1.innerHTML = quizQuestions[0].options[0];
         option2.innerHTML = quizQuestions[0].options[1];
         option3.innerHTML = quizQuestions[0].options[2];
-    } else if (currentQuestion = 1) {
+    } else if (currentQuestion === 1) {
         quiz.innerHTML = quizQuestions[1].question;
         option1.innerHTML = quizQuestions[1].options[0];
         option2.innerHTML = quizQuestions[1].options[1];
         option3.innerHTML = quizQuestions[1].options[2];
+    } else if (currentQuestion === 2) {
+        quiz.innerHTML = quizQuestions[2].question;
+        option1.innerHTML = quizQuestions[2].options[0];
+        option2.innerHTML = quizQuestions[2].options[1];
+        option3.innerHTML = quizQuestions[2].options[2];
+    } else if (currentQuestion === 3) {
+        quiz.innerHTML = quizQuestions[3].question;
+        option1.innerHTML = quizQuestions[3].options[0];
+        option2.innerHTML = quizQuestions[3].options[1];
+        option3.innerHTML = quizQuestions[3].options[2];
+    } else if (currentQuestion === 4) {
+        quiz.innerHTML = quizQuestions[4].question;
+        option1.innerHTML = quizQuestions[4].options[0];
+        option2.innerHTML = quizQuestions[4].options[1];
+        option3.innerHTML = quizQuestions[4].options[2];
+    } else if (currentQuestion === 5) {
+        quiz.innerHTML = quizQuestions[5].question;
+        option1.innerHTML = quizQuestions[5].options[0];
+        option2.innerHTML = quizQuestions[5].options[1];
+        option3.innerHTML = quizQuestions[5].options[2];
+    } else if (currentQuestion === 6) {
+        quiz.innerHTML = quizQuestions[6].question;
+        option1.innerHTML = quizQuestions[6].options[0];
+        option2.innerHTML = quizQuestions[6].options[1];
+        option3.innerHTML = quizQuestions[6].options[2];
+    } else if (currentQuestion === 7) {
+        quiz.innerHTML = quizQuestions[7].question;
+        option1.innerHTML = quizQuestions[7].options[0];
+        option2.innerHTML = quizQuestions[7].options[1];
+        option3.innerHTML = quizQuestions[7].options[2];
+    } else if (currentQuestion === 8) {
+        quiz.innerHTML = quizQuestions[8].question;
+        option1.innerHTML = quizQuestions[8].options[0];
+        option2.innerHTML = quizQuestions[8].options[1];
+        option3.innerHTML = quizQuestions[8].options[2];
+    } else if (currentQuestion === 9) {
+        quiz.innerHTML = quizQuestions[9].question;
+        option1.innerHTML = quizQuestions[9].options[0];
+        option2.innerHTML = quizQuestions[9].options[1];
+        option3.innerHTML = quizQuestions[9].options[2];
+    } else if (currentQuestion === 10) {
+        quiz.innerHTML = quizQuestions[10].question;
+        option1.innerHTML = quizQuestions[10].options[0];
+        option2.innerHTML = quizQuestions[10].options[1];
+        option3.innerHTML = quizQuestions[10].options[2];
+    } else if (currentQuestion === 11) {
+        quiz.innerHTML = quizQuestions[11].question;
+        option1.innerHTML = quizQuestions[11].options[0];
+        option2.innerHTML = quizQuestions[11].options[1];
+        option3.innerHTML = quizQuestions[11].options[2];
+    } else if (currentQuestion === 12) {
+        quiz.innerHTML = quizQuestions[12].question;
+        option1.innerHTML = quizQuestions[12].options[0];
+        option2.innerHTML = quizQuestions[12].options[1];
+        option3.innerHTML = quizQuestions[12].options[2];
+    } else if (currentQuestion === 13) {
+        quiz.innerHTML = quizQuestions[13].question;
+        option1.innerHTML = quizQuestions[13].options[0];
+        option2.innerHTML = quizQuestions[13].options[1];
+        option3.innerHTML = quizQuestions[13].options[2];
+    } else if (currentQuestion === 14) {
+        quiz.innerHTML = quizQuestions[14].question;
+        option1.innerHTML = quizQuestions[14].options[0];
+        option2.innerHTML = quizQuestions[14].options[1];
+        option3.innerHTML = quizQuestions[14].options[2];
     }
    
 }
