@@ -1,5 +1,3 @@
-populateQuestion();
-
 const quizQuestions = [
     {
         question: "What year did Jurrasic Park come out?",
@@ -77,10 +75,10 @@ const quizQuestions = [
         answerIndex: 0,
     },
 ];
-const quiz = document.getElementById("quiz").value;
-const option1 = document.getElementById("a").value;
-const option2 = document.getElementById("b").value;
-const option3 = document.getElementById("c").value;
+const quiz = document.getElementById("quiz");
+const option1 = document.getElementById("a");
+const option2 = document.getElementById("b");
+const option3 = document.getElementById("c");
 
 /**
  * To populate the question and answer
@@ -171,10 +169,18 @@ function populateQuestion () {
 
 /**
  * To cycle through the questions 
+ * and call function to check answer
  */
 function runQuiz() {
     document.getElementsByClassName("option").value = "";
 
+    // Need to add code to cycle through questions
+
+    document.addEventListener("click", function() {
+        if (this.getElementsById("submit ")) {
+            getAnswer()
+        }
+        })
     
 }
 
@@ -182,7 +188,7 @@ function getAnswer() {
     let userAnswer = document.getElementsByName("answer");
     for (i = 0; i < userAnswer.length; i++) {
         if(userAnswer[i].checked) {
-            function checkAnswer();
+            function checkAnswer()
         }
     }
 }
@@ -199,3 +205,5 @@ function displayScore() {
 
 }
 
+
+document.addEventListener("DOMContentLoaded", populateQuestion())

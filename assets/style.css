@@ -47,6 +47,8 @@ h3 {
     padding: 0.8rem;
     width: 80%;
     margin: 10px auto;
+    font-weight: 100;
+    letter-spacing: 0.25rem;
 }
 
 .marker {
