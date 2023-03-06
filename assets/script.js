@@ -1,11 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
-    let options = document.getElementsByClassName("button");
-        if (this.getElementsByID("submit")) {
-            getAnswer()
-        }
-})
+document.addEventListener("DOMContentLoaded", populateQuestion())
 
-const questions = [
+const quizQuestions = [
     {
         question: "What year did Jurrasic Park come out?",
         options: ["1998", "1995", "1993"],
@@ -82,6 +77,28 @@ const questions = [
         answerIndex: 0,
     },
 ];
+const quiz = document.getElementById("quiz").value;
+const option1 = document.getElementById("a").value;
+const option2 = document.getElementById("b").value;
+const option3 = document.getElementById("c").value;
+
+function populateQuestion () {
+
+    let currentQuestion = 0;
+    
+    if (currentQuestion = 0){
+        quiz.innerHTML = quizQuestions[0].question;
+        option1.innerHTML = quizQuestions[0].options[0];
+        option2.innerHTML = quizQuestions[0].options[1];
+        option3.innerHTML = quizQuestions[0].options[2];
+    } else if (currentQuestion = 1) {
+        quiz.innerHTML = quizQuestions[1].question;
+        option1.innerHTML = quizQuestions[1].options[0];
+        option2.innerHTML = quizQuestions[1].options[1];
+        option3.innerHTML = quizQuestions[1].options[2];
+    }
+   
+}
 
 /**
  * To cycle through the questions 
@@ -89,87 +106,12 @@ const questions = [
 function runQuiz() {
     document.getElementsByClassName("option").value = "";
 
-    if (questions[0]) {
-        let quiz = document.getElementById("quiz").value = questions[0].question;
-        let option1 = document.getElementById("a").textContent = questions[0].options[0];
-        let option2 = document.getElementById("b").textContent = questions[0].options[1];
-        let option3 = document.getElementById("c").textContent = questions[0].options[2];    
-    } else if (questions[1]) {
-        let quiz = document.getElementById("quiz").value = questions[1].question;
-        let option1 = document.getElementById("a").textContent = questions[1].options[0];
-        let option2 = document.getElementById("b").textContent = questions[1].options[1];
-        let option3 = document.getElementById("c").textContent = questions[1].options[2]; 
-    } else if (questions[2]) {
-        let quiz = document.getElementById("quiz").value = questions[2].question;
-        let option1 = document.getElementById("a").textContent = questions[2].options[0];
-        let option2 = document.getElementById("b").textContent = questions[2].options[1];
-        let option3 = document.getElementById("c").textContent = questions[2].options[2]; 
-    } else if (questions[3]) {
-        let quiz = document.getElementById("quiz").value = questions[3].question;
-        let option1 = document.getElementById("a").textContent = questions[3].options[0];
-        let option2 = document.getElementById("b").textContent = questions[3].options[1];
-        let option3 = document.getElementById("c").textContent = questions[3].options[2]; 
-    } else if (questions[4]) {
-        let quiz = document.getElementById("quiz").value = questions[4].question;
-        let option1 = document.getElementById("a").textContent = questions[4].options[0];
-        let option2 = document.getElementById("b").textContent = questions[4].options[1];
-        let option3 = document.getElementById("c").textContent = questions[4].options[2]; 
-    } else if (questions[5]) {
-        let quiz = document.getElementById("quiz").value = questions[5].question;
-        let option1 = document.getElementById("a").textContent = questions[5].options[0];
-        let option2 = document.getElementById("b").textContent = questions[5].options[1];
-        let option3 = document.getElementById("c").textContent = questions[5].options[2]; 
-    } else if (questions[6]) {
-        let quiz = document.getElementById("quiz").value = questions[6].question;
-        let option1 = document.getElementById("a").textContent = questions[6].options[0];
-        let option2 = document.getElementById("b").textContent = questions[6].options[1];
-        let option3 = document.getElementById("c").textContent = questions[6].options[2]; 
-    } else if (questions[7]) {
-        let quiz = document.getElementById("quiz").value = questions[7].question;
-        let option1 = document.getElementById("a").textContent = questions[7].options[0];
-        let option2 = document.getElementById("b").textContent = questions[7].options[1];
-        let option3 = document.getElementById("c").textContent = questions[7].options[2]; 
-    } else if (questions[8]) {
-        let quiz = document.getElementById("quiz").value = questions[8].question;
-        let option1 = document.getElementById("a").textContent = questions[8].options[0];
-        let option2 = document.getElementById("b").textContent = questions[8].options[1];
-        let option3 = document.getElementById("c").textContent = questions[8].options[2]; 
-    } else if (questions[9]) {
-        let quiz = document.getElementById("quiz").value = questions[9].question;
-        let option1 = document.getElementById("a").textContent = questions[9].options[0];
-        let option2 = document.getElementById("b").textContent = questions[9].options[1];
-        let option3 = document.getElementById("c").textContent = questions[9].options[2]; 
-    } else if (questions[10]) {
-        let quiz = document.getElementById("quiz").value = questions[10].question;
-        let option1 = document.getElementById("a").textContent = questions[10].options[0];
-        let option2 = document.getElementById("b").textContent = questions[10].options[1];
-        let option3 = document.getElementById("c").textContent = questions[10].options[2]; 
-    } else if (questions[11]) {
-        let quiz = document.getElementById("quiz").value = questions[11].question;
-        let option1 = document.getElementById("a").textContent = questions[11].options[0];
-        let option2 = document.getElementById("b").textContent = questions[11].options[1];
-        let option3 = document.getElementById("c").textContent = questions[11].options[2]; 
-    } else if (questions[12]) {
-        let quiz = document.getElementById("quiz").value = questions[12].question;
-        let option1 = document.getElementById("a").textContent = questions[12].options[0];
-        let option2 = document.getElementById("b").textContent = questions[12].options[1];
-        let option3 = document.getElementById("c").textContent = questions[12].options[2]; 
-    } else if (questions[13]) {
-        let quiz = document.getElementById("quiz").value = questions[13].question;
-        let option1 = document.getElementById("a").textContent = questions[13].options[0];
-        let option2 = document.getElementById("b").textContent = questions[13].options[1];
-        let option3 = document.getElementById("c").textContent = questions[13].options[2]; 
-    } else if (questions[14]) {
-        let quiz = document.getElementById("quiz").value = questions[14].question;
-        let option1 = document.getElementById("a").textContent = questions[14].options[0];
-        let option2 = document.getElementById("b").textContent = questions[14].options[1];
-        let option3 = document.getElementById("c").textContent = questions[14].options[2]; 
-    };
+    
 }
 
 function getAnswer() {
     let userAnswer = document.getElementsByName("answer");
-    for (i = 0; i < userAnswer.answer.length; i++) {
+    for (i = 0; i < userAnswer.length; i++) {
         if(userAnswer[i].checked) {
             function checkAnswer();
         }
