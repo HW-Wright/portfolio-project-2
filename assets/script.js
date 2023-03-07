@@ -186,15 +186,24 @@ function runQuiz() {
 }
 
 /**
- * To check answer against object array
+ * To retrive user answer and 
+ * check answer against object array
  */
 function getAnswer() {
+
+    let correct = userAnswer === correctAnswer;
+
     for (i = 0; i < userAnswer.length; i++) {
         if(userAnswer[i].checked) {
             function checkAnswer()
+            //?????????????????????
         
     }
+    if (correctAnswer) {
+        keepScore();
+    }
 }}
+
 
 
 /**
