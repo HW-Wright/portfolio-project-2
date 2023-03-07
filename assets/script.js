@@ -79,6 +79,7 @@ const quiz = document.getElementById("quiz");
 const option1 = document.getElementById("a");
 const option2 = document.getElementById("b");
 const option3 = document.getElementById("c");
+const userAnswer = document.getElementsByName("answer").value;
 
 /**
  * To populate the question and answer
@@ -184,17 +185,16 @@ function runQuiz() {
     
 }
 
-function getAnswer() {
-    let userAnswer = document.getElementsByName("answer");
-    for (i = 0; i < userAnswer.length; i++) {
-        if(userAnswer[i].checked) {
-            function checkAnswer()
-        }
-    }
-}
+// function getAnswer() {
+//     for (i = 0; i < userAnswer.length; i++) {
+//         if(userAnswer[i].checked) {
+//             function checkAnswer()
+//         }
+//     }
+// }
 
 function checkAnswer() {
-    
+    // How do I search object array for correct answer
 }
 
 function keepScore() {
