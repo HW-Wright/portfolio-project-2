@@ -89,6 +89,8 @@ function populateQuestion () {
 
     let currentQuestion = Math.floor(Math.random() * 14);
     
+    // code needs to not use same number twice 
+
     if (currentQuestion === 0){
         quiz.innerHTML = quizQuestions[0].question;
         option1.innerHTML = quizQuestions[0].options[0];
@@ -175,34 +177,35 @@ function populateQuestion () {
 function runQuiz() {
     document.getElementsByClassName("option").value = "";
 
-    // Need to add code to cycle through questions
-
     document.addEventListener("click", function() {
         if (this.getElementsById("submit ")) {
-            getAnswer()
+            getAnswer(), populateQuestion()
         }
         })
     
 }
 
-// function getAnswer() {
-//     for (i = 0; i < userAnswer.length; i++) {
-//         if(userAnswer[i].checked) {
-//             function checkAnswer()
-//         }
-//     }
-// }
+/**
+ * To check answer against object array
+ */
+function getAnswer() {
+    for (i = 0; i < userAnswer.length; i++) {
+        if(userAnswer[i].checked) {
+            function checkAnswer()
+        
+    }
+}}
 
-function checkAnswer() {
-    // How do I search object array for correct answer
-}
 
+/**
+ * To keep track of and increment user score on DOM
+ */
 function keepScore() {
+    let score = document.getElementById("score").textContent;
 
-}
-
-function displayScore() {
-
+    if (checkAnswer()) {
+        document.getElementById("score").innerText = ++score;
+    }
 }
 
 
