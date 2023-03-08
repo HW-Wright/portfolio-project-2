@@ -9,7 +9,7 @@ body {
 
 #quiz-area {
     margin: 0 auto;
-    width: 75%;
+    width: 80%;
     text-align: center;
     border: 2px solid rgb(176, 16, 16);
     border-radius: 50px;
@@ -52,14 +52,21 @@ h3 {
     font-weight: 100;
 }
 
-#a, #b, #c {
+button {
     border: 1px solid antiquewhite;
     border-radius: 20px;
-    padding: 0.8rem;
-    width: 80%;
+    padding: 2rem;
+    width: 50%;
     margin: 10px auto;
-    font-weight: 100;
+    font-weight: 900;
     letter-spacing: 0.25rem;
+    background-color: transparent;
+    color: antiquewhite;
+}
+
+button:hover {
+    border: 1px solid rgb(176, 16, 16);
+    color: rgb(176, 16, 16);
 }
 
 .marker {

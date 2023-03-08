@@ -70,7 +70,7 @@ const quizQuestions = [
         answerIndex: 2,
     },
     {
-        question: "Who wrote and directed the 1997 queer romcom, 'Chasing Amy'?",
+        question: "Who wrote and directed the 1997 romcom, 'Chasing Amy'?",
         options: ["Kevin Smith", "Ben Affleck", "Jason Lee"],
         answerIndex: 0,
     },
@@ -80,18 +80,28 @@ const option1 = document.getElementById("a");
 const option2 = document.getElementById("b");
 const option3 = document.getElementById("c");
 const userAnswer = document.getElementsByName("answer").value;
+const seenQuestions = [];
+
 
 /**
  * To populate the question and answer
  * areas with the corresponding html
  */
-// let currentQuestion = Math.floor(Math.random() * 14);
+
 function populateQuestion (questionIndex) {
+
+    let = currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
     
-        quiz.innerHTML = quizQuestions[questionIndex].question;
-        option1.innerHTML = quizQuestions[questionIndex].options[0];
-        option2.innerHTML = quizQuestions[questionIndex].options[1];
-        option3.innerHTML = quizQuestions[questionIndex].options[2];
+        quiz.innerHTML = quizQuestions[currentQuestionIndex].question;
+        option1.innerHTML = quizQuestions[currentQuestionIndex].options[0];
+        option2.innerHTML = quizQuestions[currentQuestionIndex].options[1];
+        option3.innerHTML = quizQuestions[currentQuestionIndex].options[2];
+    
+    while (seenQuestions.includes(currentQuestionIndex)) {
+        currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
+    }
+    
+    seenQuestions.push (currentQuestionIndex)
 }
 
 /**
@@ -102,7 +112,7 @@ function runQuiz() {
     document.getElementsByClassName("option").value = "";
 
     document.addEventListener("click", function() {
-        if (this.getElementsById("submit ")) {
+        if (this.getElementsByTagName("button")) {
             getAnswer(), populateQuestion()
         }
         })
@@ -117,16 +127,18 @@ function getAnswer() {
 
     let correct = userAnswer === correctAnswer;
 
-    for (i = 0; i < userAnswer.length; i++) {
-        if(userAnswer[i].checked) {
-            function checkAnswer() {
+
+
+    // for (i = 0; i < userAnswer.length; i++) {
+    //     if(userAnswer[i].checked) {
+    //         function checkAnswer() {
                 
-            }
-    }
-    if (correctAnswer) {
-        keepScore();
-    }
-}}
+    //         }
+    // }
+    // if (correctAnswer) {
+    //     keepScore();
+    // }
+}
 
 
 
