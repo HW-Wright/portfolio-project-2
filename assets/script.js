@@ -111,7 +111,11 @@ function populateQuestion (questionIndex) {
 function runQuiz() {
     document.getElementsByClassName("option").value = "";
 
-    document.getElementsByTagName("button").addEventListener("click", getAnswer())
+    document.getElementsByTagName("button").addEventListener("click", function() {
+        if (this.getAttribute("data-type") === "submit") {
+            getAnswer();
+        }
+    })
     
 }
 
@@ -153,8 +157,8 @@ function getAnswer() {
         correctAnswer = getElementById("c").value;
     } else if (currentQuestionIndex === 14) {
         correctAnswer = getElementById("a").value;
-    }
-
+    } 
+    
     if (correctAnswer == quizQuestions[currentQuestionIndex].answerIndex) {
         keepScore(), populateQuestion();
     } else populateQuestion();
@@ -166,7 +170,7 @@ function getAnswer() {
  */
 function keepScore() {
     let score = document.getElementById("score").textContent;
-    ++score;
+    document.getElementById("score").textContent = ++score;
 
 }
 
