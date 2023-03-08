@@ -111,11 +111,7 @@ function populateQuestion (questionIndex) {
 function runQuiz() {
     document.getElementsByClassName("option").value = "";
 
-    document.addEventListener("click", function() {
-        if (this.getElementsByTagName("button")) {
-            getAnswer(), populateQuestion()
-        }
-        })
+    document.getElementsByTagName("button").addEventListener("click", getAnswer())
     
 }
 
@@ -125,32 +121,53 @@ function runQuiz() {
  */
 function getAnswer() {
 
-    let correct = userAnswer === correctAnswer;
+    let correctAnswer ;
+    
+    if (currentQuestionIndex === 0) {
+        correctAnswer = getElementById("c").value;
+    } else if (currentQuestionIndex === 1) {
+        correctAnswer = getElementById("b").value;
+    } else if (currentQuestionIndex === 2) {
+        correctAnswer = getElementById("b").value;
+    } else if (currentQuestionIndex === 3) {
+        correctAnswer = getElementById("c").value;
+    } else if (currentQuestionIndex === 4) {
+        correctAnswer = getElementById("a").value;
+    } else if (currentQuestionIndex === 5) {
+        correctAnswer = getElementById("b").value;
+    } else if (currentQuestionIndex === 6) {
+        correctAnswer = getElementById("b").value;
+    } else if (currentQuestionIndex === 7) {
+        correctAnswer = getElementById("a").value;
+    } else if (currentQuestionIndex === 8) {
+        correctAnswer = getElementById("a").value;
+    } else if (currentQuestionIndex === 9) {
+        correctAnswer = getElementById("b").value;
+    } else if (currentQuestionIndex === 10) {
+        correctAnswer = getElementById("a").value;
+    } else if (currentQuestionIndex === 11) {
+        correctAnswer = getElementById("c").value;
+    } else if (currentQuestionIndex === 12) {
+        correctAnswer = getElementById("c").value;
+    } else if (currentQuestionIndex === 13) {
+        correctAnswer = getElementById("c").value;
+    } else if (currentQuestionIndex === 14) {
+        correctAnswer = getElementById("a").value;
+    }
 
+    if (correctAnswer == quizQuestions[currentQuestionIndex].answerIndex) {
+        keepScore(), populateQuestion();
+    } else populateQuestion();
 
-
-    // for (i = 0; i < userAnswer.length; i++) {
-    //     if(userAnswer[i].checked) {
-    //         function checkAnswer() {
-                
-    //         }
-    // }
-    // if (correctAnswer) {
-    //     keepScore();
-    // }
 }
-
-
 
 /**
  * To keep track of and increment user score on DOM
  */
 function keepScore() {
     let score = document.getElementById("score").textContent;
+    ++score;
 
-    if (checkAnswer()) {
-        document.getElementById("score").innerText = ++score;
-    }
 }
 
 
