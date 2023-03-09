@@ -100,6 +100,11 @@ function getUserAnswer() {
     
 }
 
+function checkUserAnswer() {
+
+    
+}
+
 
 
 
