@@ -1,3 +1,4 @@
+
 const quizQuestions = [
     {
         question: "What year did Jurrasic Park come out?",
@@ -81,6 +82,7 @@ const option2 = document.getElementById("b");
 const option3 = document.getElementById("c");
 const userAnswer = document.getElementsByName("answer").value;
 const seenQuestions = [];
+const currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
 
 
 /**
@@ -90,18 +92,19 @@ const seenQuestions = [];
 
 function populateQuestion (questionIndex) {
 
-    let = currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
-    
+    if (currentQuestionIndex !== seenQuestions) {
         quiz.innerHTML = quizQuestions[currentQuestionIndex].question;
         option1.innerHTML = quizQuestions[currentQuestionIndex].options[0];
         option2.innerHTML = quizQuestions[currentQuestionIndex].options[1];
         option3.innerHTML = quizQuestions[currentQuestionIndex].options[2];
-    
-    while (seenQuestions.includes(currentQuestionIndex)) {
-        currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
     }
-    
+        
     seenQuestions.push (currentQuestionIndex)
+
+    // while (seenQuestions.includes(currentQuestionIndex)) {
+    //     currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
+    // }
+    
 }
 
 /**
@@ -109,13 +112,16 @@ function populateQuestion (questionIndex) {
  * and call function to check answer
  */
 function runQuiz() {
-    document.getElementsByClassName("option").value = "";
 
-    document.getElementsByTagName("button").addEventListener("click", function() {
-        if (this.getAttribute("data-type") === "submit") {
-            getAnswer();
-        }
-    })
+    let options = document.getElementsByTagName("button");
+
+    for (let i = 0; i <= options.length - 1 ; i++) {
+        options[i].addEventListener("click", function() {
+            if(this.getAttribute("data-type") === "submit") {
+                getAnswer();
+            }
+        })
+    }
     
 }
 
@@ -125,41 +131,87 @@ function runQuiz() {
  */
 function getAnswer() {
 
-    let correctAnswer ;
+    let correctAnswer = quizQuestions[currentQuestionIndex].answerIndex;
+
+    // switch (correctAnswer) {
+    //     case 0:
+    //         getElementById("c").value;
+    //         break;
+    //     case 1:
+    //         getElementById("b").value;
+    //         break;
+    //     case 2:
+    //         getElementById("b").value;
+    //         break;
+    //     case 3:
+    //         getElementById("c").value;
+    //         break;
+    //     case 4:
+    //         getElementById("a").value;
+    //         break;
+    //     case 5:
+    //         getElementById("b").value;
+    //         break;
+    //     case 6:
+    //         getElementById("b").value;
+    //         break;
+    //     case 7:
+    //         getElementById("a").value;
+    //         break;
+    //     case 8:
+    //         getElementById("a").value;
+    //         break;
+    //     case 9:
+    //         getElementById("b").value;
+    //         break;
+    //     case 10:
+    //         getElementById("a").value;
+    //         break;
+    //     case 11:
+    //         getElementById("c").value;
+    //         break;
+    //     case 12: 
+    //         getElementById("c").value;
+    //         break;
+    //     case 13:
+    //         getElementById("c").value;
+    //         break;
+    //     case 14:
+    //         getElementById("a").value;
+    // }
+
     
     if (currentQuestionIndex === 0) {
-        correctAnswer = getElementById("c").value;
+        correctAnswer = document.getElementById("c").value;
     } else if (currentQuestionIndex === 1) {
-        correctAnswer = getElementById("b").value;
+        correctAnswer = document.getElementById("b").value;
     } else if (currentQuestionIndex === 2) {
-        correctAnswer = getElementById("b").value;
+        correctAnswer = document.getElementById("b").value;
     } else if (currentQuestionIndex === 3) {
-        correctAnswer = getElementById("c").value;
+        correctAnswer = document.getElementById("c").value;
     } else if (currentQuestionIndex === 4) {
-        correctAnswer = getElementById("a").value;
+        correctAnswer = document.getElementById("a").value;
     } else if (currentQuestionIndex === 5) {
-        correctAnswer = getElementById("b").value;
+        correctAnswer = document.getElementById("b").value;
     } else if (currentQuestionIndex === 6) {
-        correctAnswer = getElementById("b").value;
+        correctAnswer = document.getElementById("b").value;
     } else if (currentQuestionIndex === 7) {
-        correctAnswer = getElementById("a").value;
+        correctAnswer = document.getElementById("a").value;
     } else if (currentQuestionIndex === 8) {
-        correctAnswer = getElementById("a").value;
+        correctAnswer = document.getElementById("a").value;
     } else if (currentQuestionIndex === 9) {
-        correctAnswer = getElementById("b").value;
+        correctAnswer = document.getElementById("b").value;
     } else if (currentQuestionIndex === 10) {
-        correctAnswer = getElementById("a").value;
+        correctAnswer = document.getElementById("a").value;
     } else if (currentQuestionIndex === 11) {
-        correctAnswer = getElementById("c").value;
+        correctAnswer = document.getElementById("c").value;
     } else if (currentQuestionIndex === 12) {
-        correctAnswer = getElementById("c").value;
+        correctAnswer = document.getElementById("c").value;
     } else if (currentQuestionIndex === 13) {
-        correctAnswer = getElementById("c").value;
+        correctAnswer = document.getElementById("c").value;
     } else if (currentQuestionIndex === 14) {
-        correctAnswer = getElementById("a").value;
-    } 
-    
-    if (correctAnswer == quizQuestions[currentQuestionIndex].answerIndex) {
+        correctAnswer = document.getElementById("a").value;
+    } if (correctAnswer == quizQuestions[currentQuestionIndex].answerIndex) {
         keepScore(), populateQuestion();
     } else populateQuestion();
 
@@ -175,4 +227,4 @@ function keepScore() {
 }
 
 
-document.addEventListener("DOMContentLoaded", populateQuestion())
+document.addEventListener("DOMContentLoaded", populateQuestion(), runQuiz())
