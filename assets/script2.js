@@ -101,9 +101,12 @@ function populateQuestion () {
  */
 function getUserAnswer() {
 
-    let options = document.getElementsByName("answer");
+    let options = document.getElementsByClass("option");
         for(i = 0; i <= options.length; i++) {
             if(options[i].checked) {
+                document.addEventListener("click", function() {
+                    document.getElementsById("submit")
+                })
                 const userAnswer = options[i].checked;
                 checkUserAnswer();
             }
