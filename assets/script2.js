@@ -118,8 +118,23 @@ function getUserAnswer() {
  */
 function checkUserAnswer() {
 
-    
+    if(currentQuestionIndex === 0){
+        
+    }
 }
+
+/**
+ * To prevent default submit behaviour of form
+ * and refresh the quiz, not the page
+ */
+function handleSubmit() {
+    document.getElementById("submit").addEventListener("click", function(form) {
+        form.preventDefault();
+        getUserAnswer();
+        populateQuestion();
+    })
+}
+
 
 /**
  * To keep the score for the user to see
