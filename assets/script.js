@@ -1,79 +1,78 @@
-
 const quizQuestions = [
     {
         question: "What year did Jurrasic Park come out?",
         options: ["1998", "1995", "1993"],
-        answerIndex: 2,
+        answer: "1993",
     },
     {
         question: "Which actor has won the most Academy Awards in acting categories?",
         options: ["Julie Andrews", "Katharine Hepburn", "Meryl Streep"],
-        answerIndex: 1,
+        answer: "Katharine Hepburn",
     },
     {
         question: "What is the highest grossing movie of all time?",
         options: ["Titanic", "Avatar", "Avengers: Endgame"],
-        answerIndex: 1,
+        answer: "Avatar",
     },
     {
         question: "Which female director became the first to win an academy award for directing?",
         options: ["Greta Gertwig", "Chloe Zhao", "Katheryn Bigalow"],
-        answerIndex: 2, 
+        answer: "Katheryn Bigalow", 
     },
     {
         question: "Which line does Clint Eastwood famously deliver in the 1971 film, 'Dirty Harry'?",
         options: ["`'Do I feel lucky?' Well do ya, punk?`", "`Dying ain't much of a living, boy.`", "`Go where you're lookin', and look where you're goin'.`"],
-        answerIndex: 0,
+        answer: "`'Do I feel lucky?' Well do ya, punk?`",
     },
     {
         question: "Which of the below actors have NOT played Batman in live action?",
         options: ["Christian Bale", "Jack Nicholson", "Ben Affleck"],
-        answerIndex: 1,
+        answer: "Jack Nicholson",
     },
     {
         question: "Which of the below was legendary British film director Danny Boyle's first theatrical movie?",
         options: ["The Beach", "Shallow Grave", "Trainspotting"],
-        answerIndex: 1,
+        answer: "Shallow Grave",
     },
     {
         question: "What was the name of the 1981 movie that stared iconic footballer Pele alongside Sylvester Stalone and Michael Caine?",
         options: ["Escape to Victory", "Blame it on Rio", "Nighthawks"],
-        answerIndex: 0,
+        answer: "Escape to Victory",
     },
     {
         question: "What is the name of the device that powers Tony Stark's Iron Man suit?",
         options: ["Arc Reactor", "Reactor Disk", "Cosmic Battery"],
-        answerIndex: 0,
+        answer: "Arc Reactor",
     },
     {
         question: "What is the name of the hotel from Stanley Kubrik's The Shining?",
-        options: ["The Stanley Hotel", "The Overlook Hotel", "Hostel California"],
-        answerIndex: 1,
+        options: ["The Stanley Hotel", "The Overlook Hotel", "Hotel California"],
+        answer: "The Overlook Hotel",
     },
     {
         question: "The NWA biopic 'Straight Outta Compton' hit theatres in what year?",
         options: ["2015", "2018", "2011"],
-        answerIndex: 0,
+        answer: "2015",
     },
     {
         question: "What is the name of Ice Cube's iconic series of comedy films?",
         options: ["Oneday", "Monday", "Friday"],
-        answerIndex: 2,
+        answer: "Friday",
     },
     {
         question: "How many movies have topped $2billion at the global box office ever?",
         options: ["One", "Three", "Five"],
-        answerIndex: 2,
+        answer: "Five",
     },
     {
         question: "Why do they keep making Transformers movies?",
         options: ["Money", "Lack of new ideas", "Both"],
-        answerIndex: 2,
+        answer: "Both",
     },
     {
         question: "Who wrote and directed the 1997 romcom, 'Chasing Amy'?",
         options: ["Kevin Smith", "Ben Affleck", "Jason Lee"],
-        answerIndex: 0,
+        answer: "Kevin Smith",
     },
 ];
 const quiz = document.getElementById("quiz");
@@ -83,28 +82,20 @@ const option3 = document.getElementById("c");
 const userAnswer = document.getElementsByName("answer").value;
 const seenQuestions = [];
 const currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
-
+seenQuestions.push (currentQuestionIndex)
 
 /**
  * To populate the question and answer
  * areas with the corresponding html
  */
 
-function populateQuestion (questionIndex) {
+function populateQuestion () {
 
-    if (currentQuestionIndex !== seenQuestions) {
         quiz.innerHTML = quizQuestions[currentQuestionIndex].question;
         option1.innerHTML = quizQuestions[currentQuestionIndex].options[0];
         option2.innerHTML = quizQuestions[currentQuestionIndex].options[1];
         option3.innerHTML = quizQuestions[currentQuestionIndex].options[2];
-    }
-        
-    seenQuestions.push (currentQuestionIndex)
 
-    // while (seenQuestions.includes(currentQuestionIndex)) {
-    //     currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
-    // }
-    
 }
 
 /**
@@ -115,14 +106,24 @@ function runQuiz() {
 
     let options = document.getElementsByTagName("button");
 
-    for (let i = 0; i <= options.length - 1 ; i++) {
+    for (let i = 0; i <= options.length-1 ; i++) {
         options[i].addEventListener("click", function() {
-            if(this.getAttribute("data-type") === "submit") {
+            if(this.getAttribute("id") === "a") {
+                getAnswer();
+            } else if(this.getAttribute("id") === "b") {
+                getAnswer();
+            } else if(this.getAttribute("id") === "c") {
                 getAnswer();
             }
         })
     }
-    
+
+    // const userAnswer = document.addEventListener("click", function (){
+    //     if(this.getAttribute("data-type") === "submit") {
+    //         getAnswer();
+    //     }
+    // })
+
 }
 
 /**
@@ -131,90 +132,62 @@ function runQuiz() {
  */
 function getAnswer() {
 
-    let correctAnswer = quizQuestions[currentQuestionIndex].answerIndex;
-
-    // switch (correctAnswer) {
-    //     case 0:
-    //         getElementById("c").value;
-    //         break;
-    //     case 1:
-    //         getElementById("b").value;
-    //         break;
-    //     case 2:
-    //         getElementById("b").value;
-    //         break;
-    //     case 3:
-    //         getElementById("c").value;
-    //         break;
-    //     case 4:
-    //         getElementById("a").value;
-    //         break;
-    //     case 5:
-    //         getElementById("b").value;
-    //         break;
-    //     case 6:
-    //         getElementById("b").value;
-    //         break;
-    //     case 7:
-    //         getElementById("a").value;
-    //         break;
-    //     case 8:
-    //         getElementById("a").value;
-    //         break;
-    //     case 9:
-    //         getElementById("b").value;
-    //         break;
-    //     case 10:
-    //         getElementById("a").value;
-    //         break;
-    //     case 11:
-    //         getElementById("c").value;
-    //         break;
-    //     case 12: 
-    //         getElementById("c").value;
-    //         break;
-    //     case 13:
-    //         getElementById("c").value;
-    //         break;
-    //     case 14:
-    //         getElementById("a").value;
-    // }
-
-    
     if (currentQuestionIndex === 0) {
-        correctAnswer = document.getElementById("c").value;
+        correctAnswer = document.getElementById("c").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 1) {
-        correctAnswer = document.getElementById("b").value;
+        correctAnswer = document.getElementById("b").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 2) {
-        correctAnswer = document.getElementById("b").value;
+        correctAnswer = document.getElementById("b").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 3) {
-        correctAnswer = document.getElementById("c").value;
+        correctAnswer = document.getElementById("c").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 4) {
-        correctAnswer = document.getElementById("a").value;
+        correctAnswer = document.getElementById("a").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 5) {
-        correctAnswer = document.getElementById("b").value;
+        correctAnswer = document.getElementById("b").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 6) {
-        correctAnswer = document.getElementById("b").value;
+        correctAnswer = document.getElementById("b").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 7) {
-        correctAnswer = document.getElementById("a").value;
+        correctAnswer = document.getElementById("a").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 8) {
-        correctAnswer = document.getElementById("a").value;
+        correctAnswer = document.getElementById("a").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 9) {
-        correctAnswer = document.getElementById("b").value;
+        correctAnswer = document.getElementById("b").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 10) {
-        correctAnswer = document.getElementById("a").value;
+        correctAnswer = document.getElementById("a").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 11) {
-        correctAnswer = document.getElementById("c").value;
+        correctAnswer = document.getElementById("c").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 12) {
-        correctAnswer = document.getElementById("c").value;
+        correctAnswer = document.getElementById("c").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 13) {
-        correctAnswer = document.getElementById("c").value;
+        correctAnswer = document.getElementById("c").textContent;
+        checkAnswer();
     } else if (currentQuestionIndex === 14) {
-        correctAnswer = document.getElementById("a").value;
-    } if (correctAnswer == quizQuestions[currentQuestionIndex].answerIndex) {
-        keepScore(), populateQuestion();
-    } else populateQuestion();
+        correctAnswer = document.getElementById("a").textContent;
+        checkAnswer();
+    } 
 
+}
+
+
+
+function checkAnswer() {
+
+    if (correctAnswer === quizQuestions[currentQuestionIndex].answer) {
+        document.getElementsByTagName("button").innerHTML = "", populateQuestion();
+    } 
 }
 
 /**
@@ -225,6 +198,5 @@ function keepScore() {
     document.getElementById("score").textContent = ++score;
 
 }
-
 
 document.addEventListener("DOMContentLoaded", populateQuestion(), runQuiz())
