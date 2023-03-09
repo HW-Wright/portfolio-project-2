@@ -17,21 +17,29 @@
     <h3>Test your knowledge!</h3>
 
     <div id="quiz-area">
-
+    <form>
         <p id="quiz"></p>
     
         <div class="button">
-            <button data-type="submit" name="answer" value="0" id="a" class="option"></button>
+            <input type="radio" name="answer" value="0" class="option">
+            <label>A</label>
+            <p id="a" class="option"></p>
         </div>
 
         <div class="button">
-            <button data-type="submit" name="answer" value="1" id="b" class="option"></button>
+            <input type="radio" name="answer" value="1" class="option">
+            <label>B</label>
+            <p data-type="submit" name="answer" value="1" id="b" class="option"></p>
         </div>
 
         <div class="button">
-            <button data-type="submit" name="answer" value="2" id="c" class="option"></button>
+            <input type="radio" name="answer" value="2" class="option">
+            <label>C</label>
+            <p data-type="submit" name="answer" value="2" id="c" class="option"></p>
         </div> 
 
+        <input type="submit" name="answer" id="submit"></input>
+    </form>
     </div>
 
     <div id="score-area">
@@ -39,7 +47,7 @@
     </div>
 
 
-    <script src="assets/script.js"></script>
+    <script src="assets/script2.js"></script>
     <script src="https://kit.fontawesome.com/1a0912a112.js" crossorigin="anonymous"></script>
 </body>
 </html>

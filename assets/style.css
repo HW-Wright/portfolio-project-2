@@ -34,10 +34,6 @@ body {
     margin: 30px auto;
 }
 
-button {
-    margin: 2rem;
-}
-
 h1 {
     text-align: center;
     padding: 2rem;
@@ -52,7 +48,7 @@ h3 {
     font-weight: 100;
 }
 
-button {
+#a, #b, #c {
     border: 1px solid antiquewhite;
     border-radius: 20px;
     padding: 2rem;
@@ -62,11 +58,6 @@ button {
     letter-spacing: 0.25rem;
     background-color: transparent;
     color: antiquewhite;
-}
-
-button:hover {
-    border: 1px solid rgb(176, 16, 16);
-    color: rgb(176, 16, 16);
 }
 
 .marker {
