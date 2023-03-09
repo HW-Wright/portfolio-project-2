@@ -96,16 +96,34 @@ function populateQuestion () {
         option3.innerHTML = quizQuestions[currentQuestionIndex].options[2];
 }
 
+/**
+ * To retrive the user submission from the radio inputs
+ */
 function getUserAnswer() {
-    
+
+    let options = document.getElementsByName("answer");
+        for(i = 0; i <= options.length; i++) {
+            if(options[i].checked) {
+                const userAnswer = options[i].checked;
+                checkUserAnswer();
+            }
+        }
 }
 
+/**
+ * To determine if the user answer is correct
+ */
 function checkUserAnswer() {
 
     
 }
 
+/**
+ * To keep the score for the user to see
+ */
+function keepUserScore() {
 
+}
 
 
 document.addEventListener("DOMContentLoaded", populateQuestion())
