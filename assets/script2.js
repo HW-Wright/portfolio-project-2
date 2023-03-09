@@ -118,8 +118,11 @@ function getUserAnswer() {
  */
 function checkUserAnswer() {
 
-    if(currentQuestionIndex === 0){
-        
+    for(i = 0; i <= 10; i++) {
+        if(quizQuestions.answer === document.getElementsByClassName("option").innerHTML) {
+            keepUserScore();
+            populateQuestion();
+        } else populateQuestion();
     }
 }
 
