@@ -8,16 +8,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Ultimate Movie Quiz</title>
 </head>
 
 <body>
-    
+
+    <!-- A heading and subheading to succinctly declare to the user what my game is about -->
+
     <h1>Ultimate Movie Quiz</h1>
     <h3>Test your knowledge!</h3>
 
+    <!-- The quiz area consists of:
+    1) a form to submit the user answer
+    2) a <p> to present the question
+    3) three <div> that constain the answer options and radio inputs, plus label
+    4) a submit button for the user answer -->
+
     <div id="quiz-area">
-    <form>
+    <form name="answer" action="" method="GET">
         <p id="quiz"></p>
     
         <div class="button">
@@ -42,10 +50,13 @@
     </form>
     </div>
 
+    <!-- The final portion of the page is a <div> built to contain the user score -->
+
     <div id="score-area">
         <p id="score">0</p>
     </div>
 
+    <!-- Here two <script> elements link my JS doc and FontAwesome icons -->
 
     <script src="assets/script2.js"></script>
     <script src="https://kit.fontawesome.com/1a0912a112.js" crossorigin="anonymous"></script>

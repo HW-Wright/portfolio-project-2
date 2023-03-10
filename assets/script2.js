@@ -10,6 +10,7 @@ function handleSubmit() {
     })
 }
 
+// Below are a set of constant variables that are required in various functions throughout the code
 const quizQuestions = [
     {
         question: "What year did Jurrasic Park come out?",
@@ -119,7 +120,7 @@ function getUserAnswer() {
                 document.addEventListener("click", function() {
                     document.getElementsById("submit")
                 })
-                const userAnswer = options[i].checked;
+                const userAnswer = options[i].checked.innerHTML;
                 checkUserAnswer();
             }
         }
@@ -130,8 +131,10 @@ function getUserAnswer() {
  */
 function checkUserAnswer() {
 
+    let i = quizQuestions.question;
+
     for(i = 0; i <= 10; i++) {
-        if(quizQuestions.answer === document.getElementsByClassName("option").innerHTML) {
+        if(userAnswer === document.getElementsByClassName("option").innerHTML) {
             keepUserScore();
             populateQuestion();
         } else populateQuestion();
