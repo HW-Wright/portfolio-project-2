@@ -1,3 +1,15 @@
+/**
+ * To prevent default submit behaviour of form
+ * and refresh the quiz, not the page
+ */
+function handleSubmit() {
+    document.getElementsByTagName("form").addEventListener("click", function(form) {
+        form.preventDefault();
+        getUserAnswer();
+        populateQuestion();
+    })
+}
+
 const quizQuestions = [
     {
         question: "What year did Jurrasic Park come out?",
@@ -127,22 +139,17 @@ function checkUserAnswer() {
 }
 
 /**
- * To prevent default submit behaviour of form
- * and refresh the quiz, not the page
- */
-function handleSubmit() {
-    document.getElementById("submit").addEventListener("click", function(form) {
-        form.preventDefault();
-        getUserAnswer();
-        populateQuestion();
-    })
-}
-
-
-/**
  * To keep the score for the user to see
  */
 function keepUserScore() {
+    let score = document.getElementById("score").textContent;
+    document.getElementById("score").textContent = ++score;
+}
+
+/**
+ * To end the game and present user score
+ */
+function endGame() {
 
 }
 
