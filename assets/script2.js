@@ -2,8 +2,8 @@
  * To prevent default submit behaviour of form
  * and refresh the quiz, not the page
  */
-function handleSubmit() {
-    document.getElementsByTagName("form").addEventListener("click", function(form) {
+function preventSubmit() {
+    document.getElementsById("submit").addEventListener("click", function(form) {
         form.preventDefault();
         getUserAnswer();
         populateQuestion();
@@ -117,10 +117,10 @@ function getUserAnswer() {
     let options = document.getElementsByClass("option");
         for(i = 0; i <= options.length; i++) {
             if(options[i].checked) {
+                const userAnswer = options[i].checked.textContent;
                 document.addEventListener("click", function() {
                     document.getElementsById("submit")
                 })
-                const userAnswer = options[i].checked.innerHTML;
                 checkUserAnswer();
             }
         }
@@ -134,7 +134,7 @@ function checkUserAnswer() {
     let i = quizQuestions.question;
 
     for(i = 0; i <= 10; i++) {
-        if(userAnswer === document.getElementsByClassName("option").innerHTML) {
+        if(userAnswer === document.getElementsByClassName("option").textContent) {
             keepUserScore();
             populateQuestion();
         } else populateQuestion();
@@ -145,6 +145,7 @@ function checkUserAnswer() {
  * To keep the score for the user to see
  */
 function keepUserScore() {
+
     let score = document.getElementById("score").textContent;
     document.getElementById("score").textContent = ++score;
 }
@@ -153,7 +154,10 @@ function keepUserScore() {
  * To end the game and present user score
  */
 function endGame() {
-
+    
+    if(seenQuestions.length = 10) {
+        alert(`Game Over! You got ${score}/10!`);
+    }
 }
 
 
