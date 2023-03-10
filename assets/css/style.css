@@ -30,11 +30,6 @@ body {
     background-size: cover;
 }
 
-#quiz {
-    padding: 1rem;
-    margin: 30px auto;
-}
-
 h1 {
     text-align: center;
     padding: rem;
@@ -75,6 +70,8 @@ h3 {
     color: antiquewhite;
 }
 
+/* Media query to determine style on screen larger than 1800px */
+
 @media screen and (min-width: 1800px) {
     body {
         font-size: 200%;
@@ -82,11 +79,15 @@ h3 {
 
 }
 
+/* Media query to determine style on screen smaller than 1000px */
+
 @media screen and (max-width: 1000px) {
     body {
         font-size: 80%;
     }
 }
+
+/* Media query to determine style on screen smaller than 750px */
 
 @media screen and (max-width: 750px) {
     #quiz-area {
@@ -97,6 +98,8 @@ h3 {
         font-size: 80%;
     }
 }
+
+/* Media query to determine style on screen smaller than 575px */
 
 @media screen and (max-width: 575px) {
     body {
