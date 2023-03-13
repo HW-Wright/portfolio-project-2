@@ -3,9 +3,11 @@
  * and refresh the quiz, not the page
  */
 function preventSubmit(event) {
+
         event.preventDefault();
         getUserAnswer();
         populateQuestion();
+        
 }
 
 // Below are a set of constant variables that are required in various functions throughout the code
@@ -136,7 +138,7 @@ function getUserAnswer() {
             checkUserAnswer();
         })
     }
-}
+} 
 
 /**
  * To determine if the user answer is correct
