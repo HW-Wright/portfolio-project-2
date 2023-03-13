@@ -2,12 +2,10 @@
  * To prevent default submit behaviour of form
  * and refresh the quiz, not the page
  */
-function preventSubmit() {
-    document.getElementsById("submit").addEventListener("click", function(form) {
-        form.preventDefault();
+function preventSubmit(event) {
+        event.preventDefault();
         getUserAnswer();
         populateQuestion();
-    })
 }
 
 // Below are a set of constant variables that are required in various functions throughout the code
@@ -92,10 +90,22 @@ const quiz = document.getElementById("quiz");
 const option1 = document.getElementById("a");
 const option2 = document.getElementById("b");
 const option3 = document.getElementById("c");
-const userAnswer = document.getElementsByName("answer").value;
 const seenQuestions = [];
 const currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
-seenQuestions.push (currentQuestionIndex)
+seenQuestions.push(currentQuestionIndex)
+
+
+/**
+ * To prevent the same question being asked twice 
+ * during the game
+ */
+function pickQuestion() {
+    do {
+        currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length); 
+    } while (!seenQuestions.includes(currentQuestionIndex));
+}
+
+
 
 /**
  * To populate the question and answer
@@ -109,21 +119,23 @@ function populateQuestion () {
         option3.innerHTML = quizQuestions[currentQuestionIndex].options[2];
 }
 
+let userAnswer;
+
 /**
  * To retrive the user submission from the radio inputs
  */
 function getUserAnswer() {
 
-    let options = document.getElementsByClass("option");
+    let options = document.getElementsByClassName("option");
+
         for(i = 0; i <= options.length; i++) {
-            if(options[i].checked) {
-                const userAnswer = options[i].checked.textContent;
-                document.addEventListener("click", function() {
-                    document.getElementsById("submit")
-                })
-                checkUserAnswer();
-            }
-        }
+            // userAnswer === options[i].checked.innerHTML;
+            userAnswer === document.querySelector('input[name="answer"]:checked').value;
+            document.addEventListener("click", function() {
+            document.getElementById("submit");
+            checkUserAnswer();
+        })
+    }
 }
 
 /**
@@ -134,7 +146,7 @@ function checkUserAnswer() {
     let i = quizQuestions.question;
 
     for(i = 0; i <= 10; i++) {
-        if(userAnswer === document.getElementsByClassName("option").textContent) {
+        if(userAnswer === quizQuestions[currentQuestionIndex].answer) {
             keepUserScore();
             populateQuestion();
         } else populateQuestion();

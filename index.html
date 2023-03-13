@@ -25,26 +25,26 @@
     4) a submit button for the user answer -->
 
     <div id="quiz-area">
-    <form name="answer" action="" method="GET" aria-label="A form that performs the fucntion of collecting the user answer">
+    <form name="answer" action="" method="GET" onsubmit="preventSubmit(event);" aria-label="A form that performs the fucntion of collecting the user answer">
         <br>  
         <p id="quiz"></p>
     
         <div class="button">
-            <input type="radio" value="0" class="option">
+            <input type="radio" name="answer" value="0" class="option">
             <label>A</label>
-            <p data-type="submit" id="a" class="option"></p>
+            <p data-type="submit" id="a"></p>
         </div>
 
         <div class="button">
             <input type="radio" name="answer" value="1" class="option">
             <label>B</label>
-            <p data-type="submit" id="b" class="option"></p>
+            <p data-type="submit" id="b"></p>
         </div>
 
         <div class="button">
             <input type="radio" name="answer" value="2" class="option">
             <label>C</label>
-            <p data-type="submit" id="c" class="option"></p>
+            <p data-type="submit" id="c"></p>
         </div> 
 
         <input type="submit" name="answer" id="submit" aria-label="The submit button used to confirm the user answer">
