@@ -25,30 +25,29 @@
     4) a submit button for the user answer -->
 
     <div id="quiz-area">
-    <form name="answer" id="form" action="" method="GET" aria-label="A form that performs the fucntion of collecting the user answer">
         <br>  
         <p id="quiz"></p>
     
         <div class="button">
             <input type="radio" name="answer" value="0" class="option">
             <label>A</label>
-            <p data-type="submit" id="a"></p>
+            <p id="a"></p>
         </div>
 
         <div class="button">
             <input type="radio" name="answer" value="1" class="option">
             <label>B</label>
-            <p data-type="submit" id="b"></p>
+            <p id="b"></p>
         </div>
 
         <div class="button">
             <input type="radio" name="answer" value="2" class="option">
             <label>C</label>
-            <p data-type="submit" id="c"></p>
+            <p id="c"></p>
         </div> 
 
-        <button type="button" name="answer" id="submit" aria-label="The submit button used to confirm the user answer">Submit!</button>
-    </form>
+        <button type="button" name="answer" id="submit" data-type="submit" value="submit" aria-label="The submit button used to confirm the user answer">Submit!</button>
+    
     </div>
 
     <!-- The final portion of the page is a <div> built to contain the user score -->

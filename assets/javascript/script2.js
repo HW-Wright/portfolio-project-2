@@ -83,7 +83,7 @@ const option3 = document.getElementById("c");
 const seenQuestions = [];
 const currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
 seenQuestions.push(currentQuestionIndex)
-
+var userAnswer;
 
 /**
  * To prevent the same question being asked twice 
@@ -101,11 +101,16 @@ function pickQuestion() {
  */
 function runQuiz() {
     
-    document.addEventListener("click", function() {
-        document.getElementById("submit");
-        getUserAnswer();
-    })
+    let buttons = document.getElementsByTagName("button");
+    for(let button of buttons) {
+        button.addEventListener("click", function() {
+            if(this.getAttribute("data-type") === "submit") {
+                getUserAnswer();
+            }
+        })
+    }   
 }
+
 
 /**
  * To populate the question and answer
@@ -119,8 +124,6 @@ function populateQuestion () {
         option3.innerHTML = quizQuestions[currentQuestionIndex].options[2];
 }
 
-let userAnswer;
-
 /**
  * To retrive the user submission from the radio inputs
  */
@@ -130,7 +133,7 @@ function getUserAnswer() {
 
         for(i = 0; i <= options.length; i++) {
             // userAnswer === options[i].checked.innerHTML;
-            userAnswer === document.querySelector('input[name="answer"]:checked').value;
+            userAnswer = document.querySelector('input[name="answer"]:checked').value;
             checkUserAnswer();
         }
     }
