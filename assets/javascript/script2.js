@@ -1,15 +1,3 @@
-/**
- * To prevent default submit behaviour of form
- * and refresh the quiz, not the page
- */
-function preventSubmit(event) {
-
-        event.preventDefault();
-        getUserAnswer();
-        populateQuestion();
-        
-}
-
 // Below are a set of constant variables that are required in various functions throughout the code
 const quizQuestions = [
     {
@@ -107,7 +95,17 @@ function pickQuestion() {
     } while (!seenQuestions.includes(currentQuestionIndex));
 }
 
-
+/**
+ * To listen for user submission
+ * and runt he quiz
+ */
+function runQuiz() {
+    
+    document.addEventListener("click", function() {
+        document.getElementById("submit");
+        getUserAnswer();
+    })
+}
 
 /**
  * To populate the question and answer
@@ -133,12 +131,9 @@ function getUserAnswer() {
         for(i = 0; i <= options.length; i++) {
             // userAnswer === options[i].checked.innerHTML;
             userAnswer === document.querySelector('input[name="answer"]:checked').value;
-            document.addEventListener("click", function() {
-            document.getElementById("submit");
             checkUserAnswer();
-        })
+        }
     }
-} 
 
 /**
  * To determine if the user answer is correct
