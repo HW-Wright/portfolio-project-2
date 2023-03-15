@@ -1,3 +1,15 @@
+/**
+ * To listen for user submission
+ * and runt he quiz
+ */
+let button = document.getElementById("submit");
+    button.addEventListener("click", function(event){
+        console.log("Button pressed!")
+        event.preventDefault();
+        getUserAnswer();
+    });
+
+
 // Below are a set of constant variables that are required in various functions throughout the code
 const quizQuestions = [
     {
@@ -83,7 +95,6 @@ const option3 = document.getElementById("c");
 const seenQuestions = [];
 const currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
 seenQuestions.push(currentQuestionIndex)
-var userAnswer;
 
 /**
  * To prevent the same question being asked twice 
@@ -94,24 +105,7 @@ function pickQuestion() {
         currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length); 
     } while (!seenQuestions.includes(currentQuestionIndex));
 }
-
-/**
- * To listen for user submission
- * and runt he quiz
- */
-let button = document.getElementById("submit");
-    button.addEventListener("click", function(event){
-        console.log("Button pressed!")
-        event.preventDefault()
-        getUserAnswer()});
-        // dont wrap the event listener in a function or it can't listen
         
-function runQuiz() {
-    
-    
-    }   
-
-
 
 /**
  * To populate the question and answer
@@ -133,26 +127,28 @@ function getUserAnswer() {
     let options = document.getElementsByClassName("option");
 
         for(i = 0; i <= options.length; i++) {
-            // userAnswer === options[i].checked.innerHTML;
-            userAnswer = document.querySelector('input[name="answer"]:checked').value;
-            checkUserAnswer();
+            const userAnswer = document.querySelector('input[name="answer"]:checked').textContent;
+            if(userAnswer === quizQuestions[currentQuestionIndex].answer) {
+                keepUserScore();
+                populateQuestion();
+            } else populateQuestion();
         }
     }
 
 /**
  * To determine if the user answer is correct
  */
-function checkUserAnswer() {
+// function checkUserAnswer() {
 
-    let i = quizQuestions.question;
+//     // let i = quizQuestions;
 
-    for(i = 0; i <= 10; i++) {
-        if(userAnswer === quizQuestions[currentQuestionIndex].answer) {
-            keepUserScore();
-            populateQuestion();
-        } else populateQuestion();
-    }
-}
+//     // for(i = 0; i <= 10; i++) {
+//         if(userAnswer === quizQuestions[currentQuestionIndex].answer) {
+//             keepUserScore();
+//             populateQuestion();
+//         } else populateQuestion();
+//     // }
+// }
 
 /**
  * To keep the score for the user to see
