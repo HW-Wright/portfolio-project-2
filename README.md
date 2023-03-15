@@ -1,7 +1,7 @@
 # Ultimate Movie Quiz!
 My Second Portfolio Project is a quiz game. The purpose of the site is to engage the user with questions of varying difficulty about films, filmmaking and the movie industry as a whole. The target demographic for this site are teenegers and anyone older. Obviously the appeal will increace the further into movie fandom one goes, but the questions do not require extensive knowledge of cinema history, thus crerating a site for many to enjoy.
 
-[Please view the live project here!]()
+[Please view the live project here!](https://blahblahblah589.github.io/portfolio-project-2/)
 
 ![Am I responsive screenshot]()
 
@@ -36,7 +36,7 @@ My Second Portfolio Project is a quiz game. The purpose of the site is to engage
 ## Design
 ### Layout
 ----------------------------
-![Screenshot of site]()
+![Screenshot of site](/assets/images/project2-site.png)
 - The layout for my quiz is simple but effective. The site is topped witht he page heading and subheading. The quiz area takes up aprox 75% of the viewport and contains all interactive features of the quiz within it. Below the quiz area there is the score counter.
 - Within the quiz area there are 8 elements that the user will interactive with, they are:
 * The question area.
@@ -62,12 +62,12 @@ My Second Portfolio Project is a quiz game. The purpose of the site is to engage
 ### Validators
 ----------------------------
 - The HTML, CSS and JS documents have each been put through W3C Validators and returned no errors or warnings:
-![HTML Validation]()
-![CSS Validation]()
+![HTML Validation](/assets/images/html-validation.png)
+![CSS Validation](/assets/images/css-validation.png)
 ![JS Validation]()
 ### Performance and Accesibility
 ----------------------------
-![Lightouse test]()
+![Lightouse test](/assets/images/project2-lighthouse.png)
 ## Technologies Used
 - HTML5
 - CSS3
@@ -79,7 +79,7 @@ First go to
 Navigate to settings, then to pages on the right hand menu.
 Select source: 'deploy from branch'. Select branch: 'main'.
 The page will begin to deploy, this may take a few minutes. Once the page is refreshed, the site URL will be provided.
-![GitHub Pages screenshot]()
+![GitHub Pages screenshot](/assets/images/project2-github.png)
 ### Steps to Clone
 ----------------------------
 - Select 'Code'

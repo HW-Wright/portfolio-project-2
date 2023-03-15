@@ -32,7 +32,6 @@ body {
 
 h1 {
     text-align: center;
-    padding: rem;
     letter-spacing: 0.2rem;
     color: antiquewhite;  
 }
@@ -89,9 +88,13 @@ h3 {
 
 /* Media query to determine style on screen smaller than 750px */
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 780px) {
     #quiz-area {
         width: 90%;
+    }
+
+    body {
+        background-image: url(/assets/images/project-background2.jpg);
     }
 
     #submit {
