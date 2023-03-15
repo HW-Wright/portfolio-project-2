@@ -1,12 +1,12 @@
 /**
  * To listen for user submission
- * and runt he quiz
+ * and runt the quiz
  */
 let button = document.getElementById("submit");
     button.addEventListener("click", function(event){
-        console.log("Button pressed!")
-        event.preventDefault();
+        seenQuestions.push(currentQuestionIndex);
         getUserAnswer();
+        console.log("button pushed")
     });
 
 
@@ -15,77 +15,77 @@ const quizQuestions = [
     {
         question: "What year did Jurrasic Park come out?",
         options: ["1998", "1995", "1993"],
-        answer: "1993",
+        answer: 2,
     },
     {
         question: "Which actor has won the most Academy Awards in acting categories?",
         options: ["Julie Andrews", "Katharine Hepburn", "Meryl Streep"],
-        answer: "Katharine Hepburn",
+        answer: 1,
     },
     {
         question: "What is the highest grossing movie of all time?",
         options: ["Titanic", "Avatar", "Avengers: Endgame"],
-        answer: "Avatar",
+        answer: 1,
     },
     {
         question: "Which female director became the first to win an academy award for directing?",
         options: ["Greta Gertwig", "Chloe Zhao", "Katheryn Bigalow"],
-        answer: "Katheryn Bigalow", 
+        answer: 2, 
     },
     {
         question: "Which line does Clint Eastwood famously deliver in the 1971 film, 'Dirty Harry'?",
         options: ["`'Do I feel lucky?' Well do ya, punk?`", "`Dying ain't much of a living, boy.`", "`Go where you're lookin', and look where you're goin'.`"],
-        answer: "`'Do I feel lucky?' Well do ya, punk?`",
+        answer: 0,
     },
     {
         question: "Which of the below actors have NOT played Batman in live action?",
         options: ["Christian Bale", "Jack Nicholson", "Ben Affleck"],
-        answer: "Jack Nicholson",
+        answer: 1,
     },
     {
         question: "Which of the below was legendary British film director Danny Boyle's first theatrical movie?",
         options: ["The Beach", "Shallow Grave", "Trainspotting"],
-        answer: "Shallow Grave",
+        answer: 1,
     },
     {
         question: "What was the name of the 1981 movie that stared iconic footballer Pele alongside Sylvester Stalone and Michael Caine?",
         options: ["Escape to Victory", "Blame it on Rio", "Nighthawks"],
-        answer: "Escape to Victory",
+        answer: 0,
     },
     {
         question: "What is the name of the device that powers Tony Stark's Iron Man suit?",
         options: ["Arc Reactor", "Reactor Disk", "Cosmic Battery"],
-        answer: "Arc Reactor",
+        answer: 0,
     },
     {
         question: "What is the name of the hotel from Stanley Kubrik's The Shining?",
         options: ["The Stanley Hotel", "The Overlook Hotel", "Hotel California"],
-        answer: "The Overlook Hotel",
+        answer: 1,
     },
     {
         question: "The NWA biopic 'Straight Outta Compton' hit theatres in what year?",
         options: ["2015", "2018", "2011"],
-        answer: "2015",
+        answer: 0,
     },
     {
         question: "What is the name of Ice Cube's iconic series of comedy films?",
         options: ["Oneday", "Monday", "Friday"],
-        answer: "Friday",
+        answer: 2,
     },
     {
         question: "How many movies have topped $2billion at the global box office ever?",
         options: ["One", "Three", "Five"],
-        answer: "Five",
+        answer: 2,
     },
     {
         question: "Why do they keep making Transformers movies?",
         options: ["Money", "Lack of new ideas", "Both"],
-        answer: "Both",
+        answer: 2,
     },
     {
         question: "Who wrote and directed the 1997 romcom, 'Chasing Amy'?",
         options: ["Kevin Smith", "Ben Affleck", "Jason Lee"],
-        answer: "Kevin Smith",
+        answer: 0,
     },
 ];
 const quiz = document.getElementById("quiz");
@@ -94,17 +94,6 @@ const option2 = document.getElementById("b");
 const option3 = document.getElementById("c");
 const seenQuestions = [];
 const currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
-seenQuestions.push(currentQuestionIndex)
-
-/**
- * To prevent the same question being asked twice 
- * during the game
- */
-function pickQuestion() {
-    do {
-        currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length); 
-    } while (!seenQuestions.includes(currentQuestionIndex));
-}
         
 
 /**
@@ -113,10 +102,12 @@ function pickQuestion() {
  */
 function populateQuestion () {
 
+    if(!seenQuestions.includes(currentQuestionIndex)) {
         quiz.innerHTML = quizQuestions[currentQuestionIndex].question;
         option1.innerHTML = quizQuestions[currentQuestionIndex].options[0];
         option2.innerHTML = quizQuestions[currentQuestionIndex].options[1];
         option3.innerHTML = quizQuestions[currentQuestionIndex].options[2];
+    }
 }
 
 /**
@@ -127,28 +118,13 @@ function getUserAnswer() {
     let options = document.getElementsByClassName("option");
 
         for(i = 0; i <= options.length; i++) {
-            const userAnswer = document.querySelector('input[name="answer"]:checked').textContent;
+            const userAnswer = document.querySelector('input[name="answer"]:checked').value;
             if(userAnswer === quizQuestions[currentQuestionIndex].answer) {
                 keepUserScore();
                 populateQuestion();
             } else populateQuestion();
         }
     }
-
-/**
- * To determine if the user answer is correct
- */
-// function checkUserAnswer() {
-
-//     // let i = quizQuestions;
-
-//     // for(i = 0; i <= 10; i++) {
-//         if(userAnswer === quizQuestions[currentQuestionIndex].answer) {
-//             keepUserScore();
-//             populateQuestion();
-//         } else populateQuestion();
-//     // }
-// }
 
 /**
  * To keep the score for the user to see
@@ -163,10 +139,12 @@ function keepUserScore() {
  * To end the game and present user score
  */
 function endGame() {
-    
-    if(seenQuestions.length = 10) {
+
+    if(seenQuestions.length === 10) {
         alert(`Game Over! You got ${score}/10!`);
     }
+    
+    
 }
 
 
