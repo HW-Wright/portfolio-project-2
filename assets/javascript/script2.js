@@ -99,17 +99,18 @@ function pickQuestion() {
  * To listen for user submission
  * and runt he quiz
  */
+let button = document.getElementById("submit");
+    button.addEventListener("click", function(event){
+        console.log("Button pressed!")
+        event.preventDefault()
+        getUserAnswer()});
+        // dont wrap the event listener in a function or it can't listen
+        
 function runQuiz() {
     
-    let buttons = document.getElementsByTagName("button");
-    for(let button of buttons) {
-        button.addEventListener("click", function() {
-            if(this.getAttribute("data-type") === "submit") {
-                getUserAnswer();
-            }
-        })
+    
     }   
-}
+
 
 
 /**
