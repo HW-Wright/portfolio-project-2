@@ -36,6 +36,7 @@ My Second Portfolio Project is a quiz game. The purpose of the site is to engage
 ## Design
 ### Layout
 ----------------------------
+![Screenshot of site]()
 - The layout for my quiz is simple but effective. The site is topped witht he page heading and subheading. The quiz area takes up aprox 75% of the viewport and contains all interactive features of the quiz within it. Below the quiz area there is the score counter.
 - Within the quiz area there are 8 elements that the user will interactive with, they are:
 * The question area.
@@ -55,3 +56,36 @@ My Second Portfolio Project is a quiz game. The purpose of the site is to engage
 - I have tested that this site works and responds to a mobile devise (iPhone 13 Pro).
 - The form element performs it's functionality.
 - The site is fully responsive doen to 320px width viewport.
+### Direct Testing
+----------------------------
+![Testing criteria]()
+### Validators
+----------------------------
+- The HTML, CSS and JS documents have each been put through W3C Validators and returned no errors or warnings:
+![HTML Validation]()
+![CSS Validation]()
+![JS Validation]()
+### Performance and Accesibility
+----------------------------
+![Lightouse test]()
+## Technologies Used
+- HTML5
+- CSS3
+- JS
+- Google Fonts
+## Deployment
+The Ultimate Movie Quiz site was published to GitHub pages. Following the steps below.
+First go to 
+Navigate to settings, then to pages on the right hand menu.
+Select source: 'deploy from branch'. Select branch: 'main'.
+The page will begin to deploy, this may take a few minutes. Once the page is refreshed, the site URL will be provided.
+![GitHub Pages screenshot]()
+### Steps to Clone
+----------------------------
+- Select 'Code'
+- Select 'HTTPS'
+- Copy the URL provided
+- In GitBash terminal in new repository, use the 'git clone' command and paste URL.
+- If changes are made int he original repository you will be informed and have the option to copy changes.
+## Credits
+
