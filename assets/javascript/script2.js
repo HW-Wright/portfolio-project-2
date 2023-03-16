@@ -93,8 +93,17 @@ const option1 = document.getElementById("a");
 const option2 = document.getElementById("b");
 const option3 = document.getElementById("c");
 const seenQuestions = [];
-const currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
-        
+var currentQuestionIndex;
+
+
+/**
+ * To generate a random number from the length of 
+ * quizQuestions and assign it to current question
+ */
+function generateNum() {
+    currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
+}
+
 
 /**
  * To populate the question and answer
@@ -102,11 +111,17 @@ const currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
  */
 function populateQuestion () {
 
+    generateNum();
+
     if(!seenQuestions.includes(currentQuestionIndex)) {
         quiz.innerHTML = quizQuestions[currentQuestionIndex].question;
         option1.innerHTML = quizQuestions[currentQuestionIndex].options[0];
         option2.innerHTML = quizQuestions[currentQuestionIndex].options[1];
         option3.innerHTML = quizQuestions[currentQuestionIndex].options[2];
+    } else if(seenQuestions.includes(currentQuestionIndex)) {
+        generateNum();
+    } else if(seenQuestions.length >= 10){
+        endGame();
     }
 }
 
@@ -118,36 +133,34 @@ function getUserAnswer() {
     let options = document.getElementsByClassName("option");
 
         for(i = 0; i <= options.length; i++) {
-            const userAnswer = document.querySelector('input[name="answer"]:checked').value;
-            const value = quizQuestions[currentQuestionIndex].answer;
-            const correctAnswer = value.toString();
+            let userAnswer = document.querySelector('input[name="answer"]:checked').value;
+            let value = quizQuestions[currentQuestionIndex].answer;
+            let correctAnswer = value.toString();
             // console.log(userAnswer, typeof userAnswer);
             // console.log(quizQuestions[currentQuestionIndex].answer, typeof quizQuestions[currentQuestionIndex].answer );
             if(userAnswer === correctAnswer) {
-                keepUserScore();
                 populateQuestion();
+                keepUserScore();
             } else {
                 populateQuestion();
             }
-
-        }
     }
+}
+
+/**
+ * To end the game and present user score
+ */
+function endGame() {
+    alert(`Game Over! You got ${score}/10!`);
+}
 
 /**
  * To keep the score for the user to see
  */
 function keepUserScore() {
 
-    let score = parseInt(document.getElementById("score").innerText);
+    let score = (document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++score;
-}
-
-/**
- * To end the game and present user score
- */
-    if(seenQuestions.length === 10) {
-        alert(`Game Over! You got ${score}/10!`);
-    }   
-
+} 
 
 document.addEventListener("DOMContentLoaded", populateQuestion())
