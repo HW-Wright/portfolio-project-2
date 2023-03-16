@@ -3,7 +3,7 @@
  * and runt the quiz
  */
 let button = document.getElementById("submit");
-    button.addEventListener("click", function(event){
+    button.addEventListener("click", function(){
         seenQuestions.push(currentQuestionIndex);
         getUserAnswer();
         console.log("button pushed")
@@ -119,10 +119,17 @@ function getUserAnswer() {
 
         for(i = 0; i <= options.length; i++) {
             const userAnswer = document.querySelector('input[name="answer"]:checked').value;
-            if(userAnswer === quizQuestions[currentQuestionIndex].answer) {
+            const value = quizQuestions[currentQuestionIndex].answer;
+            const correctAnswer = value.toString();
+            // console.log(userAnswer, typeof userAnswer);
+            // console.log(quizQuestions[currentQuestionIndex].answer, typeof quizQuestions[currentQuestionIndex].answer );
+            if(userAnswer === correctAnswer) {
                 keepUserScore();
                 populateQuestion();
-            } else populateQuestion();
+            } else {
+                populateQuestion();
+            }
+
         }
     }
 
@@ -131,8 +138,8 @@ function getUserAnswer() {
  */
 function keepUserScore() {
 
-    let score = document.getElementById("score").textContent;
-    document.getElementById("score").textContent = ++score;
+    let score = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++score;
 }
 
 /**
@@ -142,9 +149,7 @@ function endGame() {
 
     if(seenQuestions.length === 10) {
         alert(`Game Over! You got ${score}/10!`);
-    }
-    
-    
+    }   
 }
 
 
