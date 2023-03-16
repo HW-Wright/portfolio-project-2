@@ -145,12 +145,9 @@ function keepUserScore() {
 /**
  * To end the game and present user score
  */
-function endGame() {
-
     if(seenQuestions.length === 10) {
         alert(`Game Over! You got ${score}/10!`);
     }   
-}
 
 
 document.addEventListener("DOMContentLoaded", populateQuestion())
