@@ -1,15 +1,3 @@
-/**
- * To listen for user submission
- * and runt the quiz
- */
-const submitButton = document.getElementById("submit");
-    submitButton.addEventListener("click", function(){
-        seenQuestions.push(currentQuestionIndex);
-        getUserAnswer();
-    });
-
-
-// Below are a set of constant variables that are required in various functions throughout the code
 const quizQuestions = [
     {
         question: "What year did Jurrasic Park come out?",
@@ -92,15 +80,22 @@ const option1 = document.getElementById("a");
 const option2 = document.getElementById("b");
 const option3 = document.getElementById("c");
 const seenQuestions = [];
-var currentQuestionIndex;
+const submitButton = document.getElementById("submit");
+let currentQuestionIndex;
+
+
+submitButton.addEventListener("click", function(){
+    seenQuestions.push(currentQuestionIndex);
+    getUserAnswer();
+});
 
 
 /**
  * To generate a random number from the length of 
  * quizQuestions and assign it to current question
  */
-function generateNum() {
-    currentQuestionIndex = Math.floor(Math.random() * quizQuestions.length);
+function generateRandomQuestionIndex() {
+    return Math.floor(Math.random() * quizQuestions.length);
 }
 
 
@@ -110,18 +105,15 @@ function generateNum() {
  */
 function populateQuestion () {
 
-    generateNum();
+    while(!currentQuestionIndex || seenQuestions.includes(currentQuestionIndex)) {
+        currentQuestionIndex = generateRandomQuestionIndex();
+    }
 
-    if(!seenQuestions.includes(currentQuestionIndex)) {
         quiz.innerHTML = quizQuestions[currentQuestionIndex].question;
         option1.innerHTML = quizQuestions[currentQuestionIndex].options[0];
         option2.innerHTML = quizQuestions[currentQuestionIndex].options[1];
         option3.innerHTML = quizQuestions[currentQuestionIndex].options[2];
-    } else if(seenQuestions.includes(currentQuestionIndex)) {
-        generateNum();
-    } else if(seenQuestions.length >= 10){
-        endGame();
-    }
+   
 }
 
 /**
