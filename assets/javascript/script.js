@@ -124,9 +124,13 @@ function getUserAnswer() {
             let userAnswer = document.querySelector('input[name="answer"]:checked').value;
             let value = quizQuestions[currentQuestionIndex].answer;
             let correctAnswer = value.toString();
+
             if(userAnswer === correctAnswer) {
-                populateQuestion();
                 keepUserScore();
+            }
+
+            if(seenQuestions.length >= 10) {
+                endGame();
             } else {
                 populateQuestion();
             }
