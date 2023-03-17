@@ -180,4 +180,4 @@ let hideDiv = document.getElementById("score-area");
 hideDiv.style.visibility = "hidden"
 }
 
-document.addEventListener("DOMContentLoaded", populateQuestion())
+document.addEventListener("DOMContentLoaded", populateQuestion());
