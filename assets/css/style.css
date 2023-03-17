@@ -63,12 +63,15 @@ h2 {
 
 /* Primary goal: to maintain clolor scheme in submit element */
 #submit {
-    background-color: rgba(176, 16, 16, 0.81);
+    background-color: #8A0000;
+    border: 2px solid rgb(176, 16, 16);
     width: 15%;
     height: 50px;
     border: 1px transparent;
     border-radius: 25px;
     color: antiquewhite;
+    font-weight: 900;
+    letter-spacing: 0.25rem;
 }
 
 #final-message {

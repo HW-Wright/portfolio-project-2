@@ -20,8 +20,8 @@ const quizQuestions = [
         answer: 2, 
     },
     {
-        question: "Which line does Clint Eastwood famously deliver in the 1971 film, 'Dirty Harry'?",
-        options: ["`'Do I feel lucky?' Well do ya, punk?`", "`Dying ain't much of a living, boy.`", "`Go where you're lookin', and look where you're goin'.`"],
+        question: "`Who starred in the in the 1971 film, 'Dirty Harry'?`",
+        options: ["Clint Eastwood", "Richard Gere", "Burt Reynolds"],
         answer: 0,
     },
     {
@@ -127,6 +127,7 @@ function getUserAnswer() {
 
             if(userAnswer === correctAnswer) {
                 keepUserScore();
+                correct();
             }
 
             if(seenQuestions.length >= 10) {
@@ -135,6 +136,22 @@ function getUserAnswer() {
                 populateQuestion();
             }
 }
+
+/**
+ * To cause submit button to flash green
+ * if correct answer given
+ */
+function correct() {
+
+    let submit = document.getElementById("submit");
+
+    submit.style.backgroundColor = "#51B14E";
+
+    setTimeout(function() {
+        submit.style.backgroundColor = "#8A0000"; //Default colour
+    }, 300);
+}
+
 
 /**
  * To keep the score for the user to see
@@ -149,12 +166,15 @@ function keepUserScore() {
  * To end the game and present user score
  */
 function endGame() {
-    let finalMessage = document.getElementById("quiz-area").innerHTML;
 
-    finalMessage = `<div id="final-message">
+    let quizDiv = document.getElementById("quiz-area");
+
+    let finalMessage = `<div id="final-message">
     <p>Game Over!</p>
-    <p>You got ${score}/10</p>
-    </div>`
+    <p>You got ${score.innerText}/10</p>
+    </div>`;
+
+    quizDiv.innerHTML = finalMessage;
 }
 
 document.addEventListener("DOMContentLoaded", populateQuestion())
