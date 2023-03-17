@@ -2,8 +2,8 @@
  * To listen for user submission
  * and runt the quiz
  */
-let submitButton = document.getElementById("submit");
-        submitButton.addEventListener("click", function(){
+const submitButton = document.getElementById("submit");
+    submitButton.addEventListener("click", function(){
         seenQuestions.push(currentQuestionIndex);
         getUserAnswer();
     });
