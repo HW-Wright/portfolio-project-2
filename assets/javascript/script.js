@@ -148,7 +148,7 @@ function correct() {
     submit.style.backgroundColor = "#51B14E";
 
     setTimeout(function() {
-        submit.style.backgroundColor = "#8A0000"; //Default colour
+        submit.style.backgroundColor = "#8A0000";
     }, 300);
 }
 
@@ -163,18 +163,22 @@ function keepUserScore() {
 } 
 
 /**
- * To end the game and present user score
+ * To end the game and present user score,
+ * while hiding the standard scorebox
  */
 function endGame() {
 
     let quizDiv = document.getElementById("quiz-area");
-
     let finalMessage = `<div id="final-message">
     <p>Game Over!</p>
     <p>You got ${score.innerText}/10</p>
     </div>`;
 
     quizDiv.innerHTML = finalMessage;
+    quizDiv.style.fontSize = "5rem";
+
+    let hideDiv = document.getElementById("score-area");
+    hideDiv.style.visibility = "hidden"
 }
 
 document.addEventListener("DOMContentLoaded", populateQuestion())
