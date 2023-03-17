@@ -2,11 +2,10 @@
  * To listen for user submission
  * and runt the quiz
  */
-let button = document.getElementById("submit");
-    button.addEventListener("click", function(){
+let submitButton = document.getElementById("submit");
+        submitButton.addEventListener("click", function(){
         seenQuestions.push(currentQuestionIndex);
         getUserAnswer();
-        console.log("button pushed")
     });
 
 
@@ -155,7 +154,6 @@ function keepUserScore() {
 
     let score = (document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++score;
-    console.log("plus one!");
 } 
 
 document.addEventListener("DOMContentLoaded", populateQuestion())

@@ -15,11 +15,12 @@ h1 {
     color: antiquewhite;  
 }
 
-h3 {
+h2 {
     text-align: center;
     letter-spacing: 0.5rem;
     color: antiquewhite;
     font-weight: 100;
+    font-size: 1rem;
 }
 
 
@@ -33,6 +34,7 @@ h3 {
     background-image: url(../images/blue-gradient.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    padding-bottom: 5px;
 }
 
 /* Primary goal: to match the styling of quiz area */

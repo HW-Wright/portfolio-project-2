@@ -36,7 +36,7 @@ My Second Portfolio Project is a quiz game. The purpose of the site is to engage
 ## Design
 ### Layout
 ----------------------------
-![Screenshot of site](/assets/images/project2-site.png)
+![Screenshot of site](/documentation/project2-site.png)
 - The layout for my quiz is simple but effective. The site is topped witht he page heading and subheading. The quiz area takes up aprox 75% of the viewport and contains all interactive features of the quiz within it. Below the quiz area there is the score counter.
 - Within the quiz area there are 8 elements that the user will interactive with, they are:
 * The question area.
@@ -58,16 +58,16 @@ My Second Portfolio Project is a quiz game. The purpose of the site is to engage
 - The site is fully responsive doen to 320px width viewport.
 ### Direct Testing
 ----------------------------
-![Testing criteria](/assets/images/testing-js.png)
+![Testing criteria](/documentation/testing-js.png)
 ### Validators
 ----------------------------
 - The HTML, CSS and JS documents have each been put through W3C Validators and returned no errors or warnings:
-![HTML Validation](/assets/images/html-validation.png)
-![CSS Validation](/assets/images/css-validation.png)
+![HTML Validation](/documentation/html-validation.png)
+![CSS Validation](/documentation/css-validation.png)
 ![JS Validation]()
 ### Performance and Accesibility
 ----------------------------
-![Lightouse test](/assets/images/project2-lighthouse.png)
+![Lightouse test](/documentation/project2-lighthouse.png)
 ## Technologies Used
 - HTML5
 - CSS3
@@ -79,7 +79,7 @@ First go to
 Navigate to settings, then to pages on the right hand menu.
 Select source: 'deploy from branch'. Select branch: 'main'.
 The page will begin to deploy, this may take a few minutes. Once the page is refreshed, the site URL will be provided.
-![GitHub Pages screenshot](/assets/images/project2-github.png)
+![GitHub Pages screenshot](/documentation/project2-github.png)
 ### Steps to Clone
 ----------------------------
 - Select 'Code'

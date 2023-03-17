@@ -15,8 +15,10 @@
 
     <!-- A heading and subheading to succinctly declare to the user what my game is about -->
 
-    <h1>Ultimate Movie Quiz</h1>
-    <h3>Test your knowledge!</h3>
+    <header>
+        <h1>Ultimate Movie Quiz</h1>
+        <h2>Test your knowledge!</h2>
+    </header>
 
     <!-- The quiz area consists of:
     1) a form to submit the user answer
@@ -24,7 +26,7 @@
     3) three <div> that constain the answer options and radio inputs, plus label
     4) a submit button for the user answer -->
 
-    <div id="quiz-area">
+    <section id="quiz-area">
         <br>  
         <p id="quiz"></p>
     
@@ -48,13 +50,14 @@
 
         <button type="button" name="answer" id="submit" data-type="submit" value="submit" aria-label="The submit button used to confirm the user answer">Submit!</button>
     
-    </div>
+    </section>
 
     <!-- The final portion of the page is a <div> built to contain the user score -->
 
-    <div id="score-area">
+    <secion id="score-area">
+        <p>Score:</p>
         <p id="score">0</p>
-    </div>
+    </section>
 
     <!-- Here two <script> elements link my JS doc and FontAwesome icons -->
 
