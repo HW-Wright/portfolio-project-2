@@ -1,3 +1,4 @@
+/* Primary goal: to provide a thematic background image and font that do not clash */
 body {
     background-color: rgb(0, 0, 0, 1);
     background-image: url(../images/theatre-curtain.jpg);
@@ -6,28 +7,6 @@ body {
     color: white;
     font-family: "Limelight";
     font-weight: 200;
-}
-
-#quiz-area {
-    margin: 0 auto;
-    width: 75%;
-    text-align: center;
-    border: 2px solid rgb(176, 16, 16);
-    border-radius: 50px;
-    background-image: url(../images/blue-gradient.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#score-area {
-    margin: 20px auto 0;
-    width: 5%;
-    text-align: center;
-    border: 2px solid rgb(176, 16, 16);
-    border-radius: 25%;
-    background-image: url(../images/blue-gradient.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 h1 {
@@ -43,6 +22,32 @@ h3 {
     font-weight: 100;
 }
 
+
+/* Primary goal: to centre the quiz area and provide contrast with the body styling */
+#quiz-area {
+    margin: 0 auto;
+    width: 75%;
+    text-align: center;
+    border: 2px solid rgb(176, 16, 16);
+    border-radius: 50px;
+    background-image: url(../images/blue-gradient.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Primary goal: to match the styling of quiz area */
+#score-area {
+    margin: 20px auto 0;
+    width: 5%;
+    text-align: center;
+    border: 2px solid rgb(176, 16, 16);
+    border-radius: 25%;
+    background-image: url(../images/blue-gradient.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Primary goal: to offer a broad area for all the quiz answer options to inhabit */
 #a, #b, #c {
     border: 1px solid antiquewhite;
     border-radius: 20px;
@@ -56,10 +61,7 @@ h3 {
     max-width: 80%;
 }
 
-.marker {
-    color: rgb(176, 16, 16);
-}
-
+/* Primary goal: to maintain clolor scheme in submit element */
 #submit {
     background-color: rgba(176, 16, 16, 0.81);
     width: 15%;

@@ -130,21 +130,15 @@ function populateQuestion () {
  */
 function getUserAnswer() {
 
-    let options = document.getElementsByClassName("option");
-
-        for(i = 0; i <= options.length; i++) {
             let userAnswer = document.querySelector('input[name="answer"]:checked').value;
             let value = quizQuestions[currentQuestionIndex].answer;
             let correctAnswer = value.toString();
-            // console.log(userAnswer, typeof userAnswer);
-            // console.log(quizQuestions[currentQuestionIndex].answer, typeof quizQuestions[currentQuestionIndex].answer );
             if(userAnswer === correctAnswer) {
                 populateQuestion();
                 keepUserScore();
             } else {
                 populateQuestion();
             }
-    }
 }
 
 /**
@@ -161,6 +155,7 @@ function keepUserScore() {
 
     let score = (document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++score;
+    console.log("plus one!");
 } 
 
 document.addEventListener("DOMContentLoaded", populateQuestion())

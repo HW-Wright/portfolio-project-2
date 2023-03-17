@@ -1,4 +1,4 @@
-# Ultimate Movie Quiz!
+# Ultimate Movie Quiz
 My Second Portfolio Project is a quiz game. The purpose of the site is to engage the user with questions of varying difficulty about films, filmmaking and the movie industry as a whole. The target demographic for this site are teenegers and anyone older. Obviously the appeal will increace the further into movie fandom one goes, but the questions do not require extensive knowledge of cinema history, thus crerating a site for many to enjoy.
 
 [Please view the live project here!](https://blahblahblah589.github.io/portfolio-project-2/)
@@ -58,7 +58,7 @@ My Second Portfolio Project is a quiz game. The purpose of the site is to engage
 - The site is fully responsive doen to 320px width viewport.
 ### Direct Testing
 ----------------------------
-![Testing criteria]()
+![Testing criteria](/assets/images/testing-js.png)
 ### Validators
 ----------------------------
 - The HTML, CSS and JS documents have each been put through W3C Validators and returned no errors or warnings:
