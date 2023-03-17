@@ -42,8 +42,6 @@ h2 {
     margin: 20px auto 0;
     width: 5%;
     text-align: center;
-    border: 2px solid rgb(176, 16, 16);
-    border-radius: 25%;
     background-image: url(../images/blue-gradient.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -71,6 +69,10 @@ h2 {
     border: 1px transparent;
     border-radius: 25px;
     color: antiquewhite;
+}
+
+#final-message {
+    margin: 0 auto;
 }
 
 /* Media query to determine style on screen larger than 1800px */

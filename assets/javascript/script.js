@@ -137,19 +137,24 @@ function getUserAnswer() {
 }
 
 /**
- * To end the game and present user score
- */
-function endGame() {
-    alert(`Game Over! You got ${score}/10!`);
-}
-
-/**
  * To keep the score for the user to see
  */
 function keepUserScore() {
 
-    let score = (document.getElementById("score").innerText);
+    var score = (document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++score;
 } 
+
+/**
+ * To end the game and present user score
+ */
+function endGame() {
+    let finalMessage = document.getElementById("quiz-area").innerHTML;
+
+    finalMessage = `<div id="final-message">
+    <p>Game Over!</p>
+    <p>You got ${score}/10</p>
+    </div>`
+}
 
 document.addEventListener("DOMContentLoaded", populateQuestion())
