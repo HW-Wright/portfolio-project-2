@@ -170,12 +170,12 @@ function endGame() {
 
     let quizDiv = document.getElementById("quiz-area");
     let finalMessage = `<div id="final-message">
-    <p>Game Over!</p>
-    <p>You got ${score.innerText}/10</p>
+    <p id="large-text">Game Over!<br>
+    You got ${score.innerText}/10</p>
+    <p id="small-text">Thank you for playing!</p>
     </div>`;
 
     quizDiv.innerHTML = finalMessage;
-    quizDiv.style.fontSize = "5rem";
 
     let hideDiv = document.getElementById("score-area");
     hideDiv.style.visibility = "hidden"

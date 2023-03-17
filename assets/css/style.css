@@ -74,8 +74,17 @@ h2 {
     letter-spacing: 0.25rem;
 }
 
+/* The following styling is for the game over message that will present after the game is completed */
 #final-message {
     margin: 0 auto;
+}
+
+#large-text {
+    font-size: 5rem;
+}
+
+#small-text {
+    font-size: 1.5rem;
 }
 
 /* Media query to determine style on screen larger than 1800px */
