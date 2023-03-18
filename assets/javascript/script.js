@@ -116,7 +116,7 @@ option3.innerHTML = quizQuestions[currentQuestionIndex].options[2];
 }
 
 /**
-* To retrive the user submission from the radio inputs
+* To retrieve the user submission from the radio inputs
 */
 function getUserAnswer() {
 
@@ -139,22 +139,26 @@ if (seenQuestions.length >= 10) {
 }
 
 /**
-* To cause submit button to flash green
-* if correct answer given
+* To cause submit button to flash green and
+* read 'Correct!' if correct answer given
 */
 function correct() {
 
 let submit = document.getElementById("submit");
 
 submit.style.backgroundColor = "#51B14E";
-submit.innerText = "Correct!"
+submit.innerText = "Correct!";
 
 setTimeout(function() {
     submit.style.backgroundColor = "#8A0000";
-    submit.innerText = "Sumbit!"
+    submit.innerText = "Sumbit!";
 }, 300);
 }
 
+/**
+ * To cause submit button's content
+ * to read 'Incorrect!' if user is wrong.
+ */
 function incorrect() {
 
     let submit = document.getElementById("submit");
@@ -162,8 +166,8 @@ function incorrect() {
     submit.innerText = "Wrong!";
 
     setTimeout(function() {
-        submit.innerText = "Submit!"
-    }, 300)
+        submit.innerText = "Submit!";
+    }, 300);
 }
 
 
@@ -178,7 +182,7 @@ document.getElementById("score").innerText = ++score;
 
 /**
 * To end the game and present user score,
-* while hiding the standard scorebox
+* while hiding the standard score box
 */
 function endGame() {
 
@@ -192,7 +196,7 @@ You got ${score.innerText}/10</p>
 quizDiv.innerHTML = finalMessage;
 
 let hideDiv = document.getElementById("score-area");
-hideDiv.style.visibility = "hidden"
+hideDiv.style.visibility = "hidden";
 }
 
 document.addEventListener("DOMContentLoaded", populateQuestion());

@@ -65,6 +65,7 @@ My Second Portfolio Project is a quiz game. The purpose of the site is to engage
 - The HTML, CSS and JS documents have each been put through W3C Validators and returned no errors or warnings:
 ![HTML Validation](/documentation/html-validation.png)
 ![CSS Validation](/documentation/css-validation.png)
+![JS Validation](/documentation/js-validation.png)
 ### Performance and Accessibility
 ----------------------------
 ![Lighthouse test](/documentation/project2-lighthouse.png)
