@@ -40,7 +40,7 @@ h2 {
 /* Primary goal: to match the styling of quiz area */
 #score-area {
     margin: 20px auto 0;
-    width: 5%;
+    width: 10%;
     text-align: center;
     border: 2px solid rgb(176, 16, 16);
     border-radius: 25%;
@@ -114,7 +114,7 @@ h2 {
     }
 
     body {
-        background-image: url(/assets/images/project-background2.jpg);
+        background-image: url(../images/project-background2.jpg);
     }
 
     #submit {
