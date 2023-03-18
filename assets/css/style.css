@@ -37,6 +37,10 @@ h2 {
     padding-bottom: 5px;
 }
 
+#quiz {
+    width: 95%;
+}
+
 /* Primary goal: to match the styling of quiz area */
 #score-area {
     margin: 20px auto 0;
