@@ -127,6 +127,8 @@ let correctAnswer = value.toString();
 if (userAnswer === correctAnswer) {
     keepUserScore();
     correct();
+} else {
+    incorrect();
 }
 
 if (seenQuestions.length >= 10) {
@@ -145,10 +147,23 @@ function correct() {
 let submit = document.getElementById("submit");
 
 submit.style.backgroundColor = "#51B14E";
+submit.innerText = "Correct!"
 
 setTimeout(function() {
     submit.style.backgroundColor = "#8A0000";
+    submit.innerText = "Sumbit!"
 }, 300);
+}
+
+function incorrect() {
+
+    let submit = document.getElementById("submit");
+
+    submit.innerText = "Wrong!";
+
+    setTimeout(function() {
+        submit.innerText = "Submit!"
+    }, 300)
 }
 
 

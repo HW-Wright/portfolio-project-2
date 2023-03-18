@@ -3,7 +3,7 @@ My Second Portfolio Project is a quiz game. The purpose of the site is to engage
 
 [Please view the live project here!](https://blahblahblah589.github.io/portfolio-project-2/)
 
-![Am I responsive screenshot]()
+![Am I responsive screenshot](/documentation/am-i-responsive-project2.png)
 
 ## User Experience (UX)
 ### User Stories
@@ -48,7 +48,7 @@ My Second Portfolio Project is a quiz game. The purpose of the site is to engage
 - The page background an image of a red stage curtain, as one would find in an old school or vintage movie theatre; this therefore works thematically as well as aesthetically. 
 - The background for the quiz area and score counter is a rich blue with a soft white gradient. This image was selected purposefully as a solid primary colour can appear basic and unappealing to modern users.
 - The font color is an off-white marble color, chosen over white to soften the contrast against both the red of the background and the blue of the quiz area.
-- Upon submission of a correct answer the submit button will flash a pale green to indicate a correct answer.
+- Upon submission of a correct answer the submit button will flash a pale green and read "Correct!" to indicate a correct answer. The button will read "Wrong!" if the answer is incorrect.
 ## Testing
 ### Browser Testing
 ----------------------------
@@ -59,7 +59,7 @@ My Second Portfolio Project is a quiz game. The purpose of the site is to engage
 - The site is fully responsive down to 320px width viewport.
 ### Direct Testing
 ----------------------------
-![Testing criteria](/documentation/testing-js.png)
+![Testing criteria](/documentation/js-testing.png)
 ### Validators
 ----------------------------
 - The HTML, CSS and JS documents have each been put through W3C Validators and returned no errors or warnings:
@@ -89,6 +89,7 @@ The page will begin to deploy, this may take a few minutes. Once the page is ref
 - If changes are made int he original repository you will be informed and have the option to copy changes.
 ## Credits
 - Button event listener: The basic code structure is borrowed from the Love Running walkthrough project.
+- The background images used in the CSS are taken from Unsplash.com. 
 ##
 - Brian Macharia, my Code Institue mentor. The student support systems at Code Institute.
 
