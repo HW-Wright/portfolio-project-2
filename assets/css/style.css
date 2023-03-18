@@ -128,4 +128,12 @@ h2 {
     body {
         font-size: 70%;
     }
+
+    #large-text {
+        font-size: 3rem;
+    }
+
+    #submit {
+        font-size: 40%;
+    }
 }
